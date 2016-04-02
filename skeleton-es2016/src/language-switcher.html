@@ -1,0 +1,6 @@
+<template>
+    <select value.bind="selectedLanguage" change.delegate="switchLanguage()" id="lg" class="form-control">
+        <option>Select your language</option>
+        <option repeat.for="language of languages" value.bind="language.value">${language.text}</option>
+    </select>
+</template>
