@@ -5,20 +5,26 @@ import {inject} from 'aurelia-framework';
 
 @inject(I18N, Element, EventAggregator)
 export class Welcome {
-  constructor(i18n,element,ea) {
-    this.i18n = i18n;
-    this.element = element;
+    constructor(i18n, element, ea) {
+        this.i18n = i18n;
+        this.element = element;
 
-      ea.subscribe('i18n:locale:changed', payload => {
-        this.i18n.updateTranslations(this.element);
-      });
-  }
+        ea.subscribe('i18n:locale:changed', payload => {
+            this.i18n.updateTranslations(this.element)
+                .then(() => {
+                    this.heading = `${this.i18n.tr('welcome.title')}!`;
+                });
+        });
+    }
 
-  attached(){
-    this.i18n.updateTranslations(this.element);
-  }
+    attached() {
+        this.i18n.updateTranslations(this.element)
+            .then(() => {
+                this.heading = `${this.i18n.tr('welcome.title')}!`;
+            });
+    }
 
-//    heading = `${this.i18n.tr('welcome.title')}!`;
+    heading = '';
     firstName = 'John';
     lastName = 'Doe';
     previousValue = this.fullName;
