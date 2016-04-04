@@ -1,30 +1,8 @@
 //import {computedFrom} from 'aurelia-framework';
-import {I18N} from 'aurelia-i18n';
-import {EventAggregator} from 'aurelia-event-aggregator';
-import {inject} from 'aurelia-framework';
+import {BaseI18N} from 'aurelia-i18n';
 
-@inject(I18N, Element, EventAggregator)
-export class Welcome {
-    constructor(i18n, element, ea) {
-        this.i18n = i18n;
-        this.element = element;
-
-        ea.subscribe('i18n:locale:changed', payload => {
-            this.i18n.updateTranslations(this.element)
-                .then(() => {
-                    this.heading = `${this.i18n.tr('welcome.title')}!`;
-                });
-        });
-    }
-
-    attached() {
-        this.i18n.updateTranslations(this.element)
-            .then(() => {
-                this.heading = `${this.i18n.tr('welcome.title')}!`;
-            });
-    }
-
-    heading = '';
+export class Welcome extends BaseI18N {
+    heading = 'Welcome to the Aurelia Navigation App!';
     firstName = 'John';
     lastName = 'Doe';
     previousValue = this.fullName;
@@ -45,7 +23,7 @@ export class Welcome {
 
     canDeactivate() {
         if (this.fullName !== this.previousValue) {
-            return confirm('Are you sure you want to leave?');
+            return confirm(`${this.i18n.tr('welcome.user_leaving_page')}?`);
         }
     }
 }
