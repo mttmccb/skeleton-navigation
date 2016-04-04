@@ -1,0 +1,12 @@
+{
+    "welcome": "Herzlich Gillkommen",
+    "github_users": "Github Benutzer",
+    "child_router": "Kinder Router",
+    "title": "Willkommen auf der Aurelia Navigation App",
+    "first_name": "Vorname",
+    "last_name": "Familienname, Nachname",
+    "full_name": "Vollständiger Name",
+    "submit": "Einreichen",
+    "user_leaving_page": "Bist du sicher dass du gehen willst",
+    "contact": "Kontakt"
+}
