@@ -8,6 +8,8 @@ export class LanguageSwitcher {
         this.languages = [
             { value:'en', text:'English (Saesneg)'},
             { value:'cy', text: 'Cymru (Welsh)'},
+            { value:'ru', text: 'Pусский (Russian)'},
+            { value:'de', text: 'Deutsche (German)'},
         ];
     }
     selectedLanguage = 'en';
