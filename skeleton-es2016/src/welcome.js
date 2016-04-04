@@ -18,12 +18,12 @@ export class Welcome extends BaseI18N {
 
     submit() {
         this.previousValue = this.fullName;
-        alert(`${this.i18n.tr('welcome.welcome')}, ${this.fullName}!`);
+        alert(`${this.i18n.tr('welcome')}, ${this.fullName}!`);
     }
 
     canDeactivate() {
         if (this.fullName !== this.previousValue) {
-            return confirm(`${this.i18n.tr('welcome.user_leaving_page')}?`);
+            return confirm(`${this.i18n.tr('user_leaving_page')}?`);
         }
     }
 }

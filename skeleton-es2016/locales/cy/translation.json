@@ -1,23 +1,12 @@
 {
-    "nav_bar": {
-      "welcome": "Croeso",
-      "github_users": "Defnyddwyr Github",
-      "child_router": "Llwybrydd Plant"  
-    },
-    "welcome": {
-        "title": "Croeso i Aurelia Navigation App",
-        "first_name": "Enw Cyntaf",
-        "last_name": "Cyfenw",
-        "full_name": "Enw Llawn",
-        "welcome": "Croeso",
-        "submit": "cyflwyno",
-        "user_leaving_page": "A ydych yn sicr eich bod am adael"
-    },
-    "users": {
-        "github_users": "Defnyddwyr Github",
-        "contact": "Cyswllt"
-    },
-    "child_router": {
-        "child_router": "Llwybrydd Plant"
-    }
+    "welcome": "Croeso",
+    "github_users": "Defnyddwyr Github",
+    "child_router": "Llwybrydd Plant",
+    "title": "Croeso i Aurelia Navigation App",
+    "first_name": "Enw Cyntaf",
+    "last_name": "Cyfenw",
+    "full_name": "Enw Llawn",
+    "submit": "cyflwyno",
+    "user_leaving_page": "A ydych yn sicr eich bod am adael",
+    "contact": "Cyswllt"
 }
