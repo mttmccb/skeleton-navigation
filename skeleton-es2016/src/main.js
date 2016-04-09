@@ -1,6 +1,6 @@
 import 'bootstrap';
 import {I18N} from 'aurelia-i18n';
-  import XHR from 'i18next-xhr-backend';
+import XHR from 'i18next-xhr-backend';
 
 export function configure(aurelia) {
   aurelia.use
@@ -16,9 +16,6 @@ export function configure(aurelia) {
             loadPath: '/locales/{{lng}}/{{ns}}.json', // <-- XHR settings for where to get the files from
           },
           lng : 'en',
-          ns: ['anotherNS', 'translation'],
-            fallbackNS: ['anotherNS', 'translation'],
-            defaultNS: 'anotherNS',
           attributes : ['t','i18n'],
           fallbackLng : 'cy',
           debug : false
