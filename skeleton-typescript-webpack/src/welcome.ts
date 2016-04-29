@@ -1,28 +1,26 @@
-//import {computedFrom} from 'aurelia-framework';
+import {computedFrom} from 'aurelia-framework';
+import {BaseI18N} from 'aurelia-i18n';
 
-export class Welcome {
+export class Welcome extends BaseI18N {
   heading: string = 'Welcome to the Aurelia Navigation App';
   firstName: string = 'John';
   lastName: string = 'Doe';
   previousValue: string = this.fullName;
+  i18n: any;
 
-  //Getters can't be directly observed, so they must be dirty checked.
-  //However, if you tell Aurelia the dependencies, it no longer needs to dirty check the property.
-  //To optimize by declaring the properties that this getter is computed from, uncomment the line below
-  //as well as the corresponding import above.
-  //@computedFrom('firstName', 'lastName')
+  @computedFrom('firstName', 'lastName')
   get fullName(): string {
     return `${this.firstName} ${this.lastName}`;
   }
 
   submit() {
     this.previousValue = this.fullName;
-    alert(`Welcome, ${this.fullName}!`);
+    alert(`${this.i18n.tr('welcome')}, ${this.fullName}!`);
   }
 
   canDeactivate(): boolean {
     if (this.fullName !== this.previousValue) {
-      return confirm('Are you sure you want to leave?');
+      return confirm(`${this.i18n.tr('user_leaving_page')}?`);
     }
   }
 }

@@ -1,6 +1,7 @@
 import {inject} from 'aurelia-framework';
 import {HttpClient} from 'aurelia-fetch-client';
 import 'isomorphic-fetch';
+import {I18N} from 'aurelia-i18n';
 
 interface IUser {
   avatar_url: string;
@@ -8,12 +9,14 @@ interface IUser {
   html_url: string;
 }
 
-@inject(HttpClient)
+@inject(HttpClient, I18N)
 export class Users {
   heading: string = 'Github Users';
   users: Array<IUser> = [];
-
-  constructor(public http: HttpClient) {
+  i18n: I18N;
+  
+  constructor(public http: HttpClient, i18n: I18N) {
+    this.i18n = i18n;
     http.configure(config => {
       config
         .useStandardConfiguration()

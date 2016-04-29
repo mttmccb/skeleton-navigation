@@ -21,7 +21,11 @@ module.exports = {
     filename: 'bundle.js'
   },
   plugins: [
-    new AureliaWebpackPlugin()
+    new AureliaWebpackPlugin({
+      includeSubModules: [
+        { moduleId: 'aurelia-i18n' }
+      ]
+    })
   ],
   module: {
     loaders: [
